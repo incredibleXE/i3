@@ -59,7 +59,7 @@ bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -178,6 +178,7 @@ bindsym $mod+r mode "resize"
 #
 bindsym Mod4+e exec nemo
 bindsym Mod4+f exec firefox
+bindsym Mod4+s exec "cinnamon-settings sound"
 bindsym Mod4+c exec gnome-calculator
 
 # copy history
@@ -185,10 +186,13 @@ exec clipit
 
 # network manager applet
 exec --no-startup-id nm-applet
+# bluetooth manager
 exec --no-startup-id blueman-applet
+# sound manager (from https://github.com/fernandotcl/pa-applet/blob/master)
+#exec --no-startup-id pa-applet
 
 # force firefox open on special workspace (disabled)
-#assign [class="Firefox"] $w2
+assign [class="Eclipse"] $w3
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -199,6 +203,9 @@ bar {
 
 # shutdown without promt
 bindsym Mod4+p exec halt -p
+
+# hibernate without promt
+bindsym Mod4+Shift+p exec systemctl hibernate
 
 # trigger thunderbird
 bindsym Mod4+t exec thunderbird
