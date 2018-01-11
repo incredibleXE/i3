@@ -243,7 +243,10 @@ exec gnome-terminal -e htop
 exec i3-msg "workspace 2: www; exec firefox; workspace 1: terminal"
 
 # multi monitoring
-exec ~/.config/monitoring.sh
+#exec ~/.config/monitoring.sh
+exec xrandr --output DP2-2 --auto --left-of eDP1 --rotate left
+exec xrandr --output DP2-1 --auto --left-of DP2-2
+
 
 # workspace assignment
 workspace $w2 output DP2-1
